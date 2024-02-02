@@ -1,0 +1,15 @@
+The average time complexities for operations on a Binary Search Tree (BST) are:
+
+Inserting the value n:
+
+Average Time Complexity: O(log n)
+Explanation: In a balanced BST, each insertion typically reduces the search space by half, resulting in a logarithmic time complexity.
+Removing the node with the value n:
+
+Average Time Complexity: O(log n)
+Explanation: Similar to insertion, removing a node involves finding the node first, which has an average time complexity of O(log n) in a balanced BST.
+Searching for a node in a BST of size n:
+
+Average Time Complexity: O(log n)
+Explanation: In a balanced BST, the search space is consistently reduced by half during each comparison, leading to a logarithmic time complexity for search operations.
+It's important to note that these time complexities assume a balanced BST. In the worst case (if the tree becomes skewed), the time complexities could degrade to O(n), where n is the number of nodes in the tree. Balancing techniques like AVL trees or Red-Black trees help maintain a balanced structure and ensure better average-case performance.
