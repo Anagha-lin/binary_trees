@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-#include <stdlib.h>
 #include <stdio.h>
 
 /**
@@ -13,32 +12,24 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
         return;
 
     binary_tree_t **queue = malloc(sizeof(binary_tree_t *) * binary_tree_height(tree) + 1);
-    size_t front = 0, rear = 0;
-
     if (queue == NULL)
         return;
 
-    queue[rear] = (binary_tree_t *)tree;
-    rear++;
+    int front = 0, rear = 0;
+
+    queue[rear++] = (binary_tree_t *)tree;
 
     while (front < rear)
     {
-        binary_tree_t *current = queue[front];
-        front++;
+        binary_tree_t *current = queue[front++];
 
         func(current->n);
 
         if (current->left != NULL)
-        {
-            queue[rear] = current->left;
-            rear++;
-        }
+            queue[rear++] = current->left;
 
         if (current->right != NULL)
-        {
-            queue[rear] = current->right;
-            rear++;
-        }
+            queue[rear++] = current->right;
     }
 
     free(queue);
